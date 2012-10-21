@@ -1,0 +1,272 @@
+
+@import "globals.less";
+
+
+
+body, p, input, button, textarea, a, a:hover, a:active, button:focus {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	text-decoration: none;
+	font-size: @font_size_normal;
+	color: @color_front_text;
+}
+
+select {
+	font-size: 14px;
+	line-height: 20px;
+}
+
+// Styles
+
+html, body {
+	background: @color_back;
+	overflow: auto;
+}
+
+
+#app {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	overflow: hidden;
+}
+
+
+header {
+
+	border-bottom: 1px solid @toolbar_shadow;
+	border-top: 1px solid @toolbar_shadow;
+	height: @header_height;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 999;
+	.gradient();
+
+	h1 {
+		display: none;
+		color: #fff;
+		font-size: 32px;
+		font-weight: normal;
+		left: 170px;
+		position: absolute;
+		text-shadow: 0 -1px 0 #000;
+		top: 6px;
+		.negative-text();
+	}
+
+}
+
+
+
+.debug {
+	color: red;
+	font-weight: bold;
+	position: absolute;
+	z-index: 99999;
+}
+
+
+
+.panel {
+
+	background-color: @color_back;
+	border-bottom: 1px solid black;
+	bottom: @toolbar_height - 1;
+	position: absolute;
+	top: @header_height + @panelbar_height;
+
+	.panelbar {
+		border-top: 1px solid @toolbar_light_bottom;
+		background: @toolbar_noise  @toolbar_gradient_bottom;
+		border-bottom: 1px solid @toolbar_shadow;
+		color: @toolbar_text;
+		font-size: @font_size_small;
+		font-weight: bold;
+		height: @panelbar_height;
+		left: -1px;
+		padding: 5px 0 0 @x_spacing;
+		position: absolute;
+		right: 0;
+		text-shadow: 0 -1px 0 #000;
+		top: -@panelbar_height;
+		.negative-text();
+	}
+
+
+	.scrollarea {
+		-webkit-overflow-scrolling: touch;
+		bottom: 0;
+		left: 0;
+		overflow: auto;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+	
+
+	.button-highlighted() {
+		background: @color_back;
+		border-color: @color_back;
+		color: #2a2a2a;
+		font-weight: bold;
+		text-shadow: 0 1px #fff;
+	}
+
+
+	.toolbar {
+
+		background-color: @toolbar_gradient_top;
+		border-top: 1px solid @toolbar_light;
+		border-left: 1px solid @toolbar_light;
+		border-right: 1px solid @toolbar_shadow;
+		height: @x_height;
+		left: 0px;
+		margin-top: 1px;
+		position: absolute;
+		right: 0px;
+		top: 100%;
+		.gradient();
+
+		> ul {
+
+			position: relative;
+			display: block;
+
+			> li {
+
+				display: inline;
+				font-size: 0;
+
+				> button {
+
+					background: 0;
+					border: 0;
+					display: block;
+					float: left;
+					font-size: 0;
+					height: 36px;
+					padding: 0;
+					width: @toolbar_height;
+
+
+					&.right {
+						float: right;
+					}
+
+					&.menu {
+						float: right;
+						.background-icon(1, -2px, -2px);
+					}
+
+					&.add {
+						.background-icon(5, -2px, -2px);
+					}
+
+
+					&.update {
+						.background-icon(6, -2px, -2px);
+					}
+
+					&:focus {
+						outline: 0;
+					}
+
+
+				}
+
+
+				ul {
+
+					position: absolute;
+					bottom: -6px;
+					right: 4px;
+					padding: 0;
+					display: none;
+					box-shadow: 0 0 4px rgba(0,0,0,0.15);
+					.highlighted-box(#bbb);
+					z-index: 1020;
+
+					li {
+
+						display: block;
+
+						button {
+							border: 0;
+							display: block;
+							background: 0;
+							height: @x_height - 10;
+							width: 140px;
+							padding: 0 20px;
+							font-size: 14px;
+							text-align: left;
+							margin: 5px 0;
+						}
+
+
+						button.highlighted {
+							font-weight: bold;
+						}
+
+					}
+
+
+					li:hover {
+
+						button {
+							.gradient();
+							color: #fff;
+						}
+
+					}
+
+
+					li:last-of-type {
+						border-bottom: 0;
+					}
+
+				}
+
+				ul.menu-is-visible {
+					display: block;
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+
+
+.header-shadow, .toolbar-shadow {
+	z-index: 1010;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: @header_height + @panelbar_height;
+	pointer-events:none;
+}
+
+
+.toolbar-shadow {
+	top: auto;
+	bottom: 0;
+	height: @toolbar_height;
+}
+
+
+
+
+
+
+
+
+
+
+

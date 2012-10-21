@@ -1,0 +1,24 @@
+{{#view App.IndexView indexCardsBinding="App.libraryController.selectedLibrary.indexController.indexCards"}}
+	<div class="panel" id="index">
+		<div class="panelbar">Index Sort by Date</div>
+		<div class="scrollarea">
+			<div class="content">
+			{{#each view.indexCards}}
+				{{#view App.IndexCardView indexCardBinding="this"}}{{/view}}
+			{{/each}}
+			</div>
+		</div>
+		<div class="toolbar">
+			<ul>
+				<li>
+					<button class="menu" type="button">List Menu</button>
+					<button class="add" type="button" {{action "add" on="click"}}>Add Record</button>
+					<button class="update" type="button" {{action "update" on="click"}}>Update List</button>
+					<ul class="menu-content">								
+						<li><button type="button" {{action "delete" on="click"}}>Delete Record</button></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+{{/view}}

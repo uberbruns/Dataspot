@@ -1,0 +1,96 @@
+{{#view App.PropertiesInspector}}
+
+<div class="panelbar">Inspector</div>
+<div class="toolbar"></div>
+
+<div id="inspector-view-wrapper" {{bindAttr class="view.inspectedView"}}>
+
+	{{#with view.library}}
+	<div class="inspector-view library-view">
+		<div class="title">Library</div>
+		<section class="group">
+		<div class="input"><div class="label">Library Name</div>{{view App.PropertiesInspectorTextInput resourceBinding="this" valueBinding="displayName"}}</div>
+		</section>
+		<div class="title">API Settings</div>
+		<section class="group">
+			<div class="input">
+				<div class="label">Auto Name</div>
+				{{view App.SelectView optionsBinding="view.boolOptions" textsBinding="view.boolTexts" resourceBinding="this" valueBinding="autoName"}}
+			</div>
+			<div class="input">
+				<div class="label">API Name</div>
+				{{view App.PropertiesInspectorTextInput disabled="true" resourceBinding="this" valueBinding="name"}}
+			</div>
+		</section>
+	</div>
+	{{/with}}
+
+
+	{{#with view.section}}
+	<div class="inspector-view section-view">
+		<div class="title">Section</div>
+		<section class="group">
+			<div class="input"><div class="label">Section Title</div>{{view App.PropertiesInspectorTextInput resourceBinding="this" valueBinding="name"}}</div>
+			<div class="input"><div class="label">Position</div>{{view App.SelectSectionOrderView resourceBinding="this" valueBinding="order"}}</div>
+		</section>
+	</div>
+	{{/with}}
+
+
+	{{#with view.field.properties}}
+
+		<div class="inspector-view properties-view">
+
+			<div class="title">Basics</div>
+			<section class="group">
+				<div class="input"><div class="label">Name</div>{{view App.PropertiesInspectorTextInput resourceBinding="this" valueBinding="displayName"}}</div>
+				<div class="input"><div class="label">Position</div>{{view App.SelectFieldOrderView resourceBinding="this" valueBinding="order"}}</div>
+				<div class="input">
+					<div class="label">Type</div>
+					{{view App.SelectView optionsBinding="view.typeOptions" textsBinding="view.typeTexts" resourceBinding="this" valueBinding="type"}}
+				</div>
+				<div class="input">
+					<div class="label">Default</div>
+					{{view App.PropertiesInspectorTextInput resourceBinding="this" valueBinding="default"}}
+				</div>
+			</section>
+
+			<div class="title">Index Card</div>
+			<section class="group">
+				<div class="input">
+					<div class="label">Label Style</div>
+					{{view App.SelectView optionsBinding="view.labelOptions" textsBinding="view.labelTexts" resourceBinding="this" valueBinding="label"}}
+				</div>
+				<div class="input">
+					<div class="label">Insert</div>
+					{{view App.SelectView optionsBinding="view.insertOptions" textsBinding="view.insertTexts" resourceBinding="this" valueBinding="insert"}}
+				</div>
+				<div class="input"><div class="label">Truncate</div>{{view App.PropertiesInspectorTextInput resourceBinding="this" valueBinding="truncate"}}</div>
+				<div class="input"><div class="label">Prepend Text</div>{{view App.PropertiesInspectorTextInput resourceBinding="this" valueBinding="prepend"}}</div>
+				<div class="input"><div class="label">Append Text</div>{{view App.PropertiesInspectorTextInput resourceBinding="this" valueBinding="append"}}</div>
+				<div class="input"><div class="label">Order</div>{{view App.PropertiesInspectorTextInput resourceBinding="this" valueBinding="labelOrder"}}</div>
+			</section>
+
+			<div class="title">API Settings</div>
+			<section class="group">
+				<div class="input">
+					<div class="label">Attribute Name</div>
+					{{view App.PropertiesInspectorTextInput disabled="true" resourceBinding="this" valueBinding="name"}}
+				</div>
+				<div class="input">
+					<div class="label">Auto Name</div>
+					{{view App.SelectView optionsBinding="view.boolOptions" textsBinding="view.boolTexts" resourceBinding="this" valueBinding="autoName"}}
+				</div>
+				<div class="input">
+					<div class="label">Index</div>
+					{{view App.SelectView optionsBinding="view.boolOptions" textsBinding="view.boolTexts" resourceBinding="this" valueBinding="index"}}
+				</div>
+			</section>
+
+		</div>
+
+	{{/with}}
+
+</div>
+
+{{/view}}

@@ -1,0 +1,94 @@
+/* BASIC METRICS */
+
+@x_spacing: 10px;
+@x_height: 44px;
+@x_height_2: 22px;
+
+@header_height: 56px;
+@panelbar_height: 30px;
+
+
+
+/* COLOR SWATCHES */
+
+@color_a_normal: #fefefe;
+@color_a_light: #fff;
+@color_a_dark: #ccc;
+@color_a_text: #333;
+
+@color_b_normal: #242424;
+@color_b_light: #242424;
+@color_b_dark: #242424;
+@color_b_text: #eee;
+
+@color_c_normal: #fefefe;
+@color_c_light: #fff;
+@color_c_dark: #cdcdcd;
+@color_c_text: #333;
+
+@color_d_normal: #fbfbfb;
+@color_d_light: lighten(@color_d_normal, 0%);
+@color_d_dark: darken(@color_d_normal, 7%);
+@color_d_text: @color_d_dark;
+
+@color_e_normal: #242424;
+@color_e_light: lighten(@color_e_normal, 5%);
+@color_e_dark: darken(@color_e_normal, 12%);
+@color_e_text: #fff;
+
+@color_f_normal: darken(@color_d_normal, 8%);
+@color_f_light: lighten(@color_f_normal, 5%);
+@color_f_dark: darken(@color_f_normal, 12%);
+
+
+
+/* DEFAULT COLORS */
+
+@color_back_shadow: @color_d_dark;
+@color_back: @color_d_normal;
+@color_back_light: @color_d_light;
+
+@color_front_shadow: @color_a_dark;
+@color_front: @color_a_normal;
+@color_front_light: @color_a_light;
+@color_front_text: @color_a_text;
+
+@color_selected_shadow: @color_b_dark;
+@color_selected: @color_b_normal;
+@color_selected_light: @color_b_light;
+@color_selected_text: @color_b_text;
+
+
+
+
+/* DEFAULT GRADIENT */
+
+.background_gradient() {
+	.gradient(lighten(@color_back, 10%), darken(@color_back, 2%));
+}
+
+
+/* TOOLBAR */
+
+@toolbar_height: @x_height;
+@toolbar_background: @color_b_normal;
+@toolbar_gradient_top: lighten(@toolbar_background, 7%);
+@toolbar_gradient_bottom: darken(@toolbar_background, 2%);
+@toolbar_light: lighten(@toolbar_background, 12%);
+@toolbar_light_bottom: lighten(@toolbar_background, 8%);
+@toolbar_shadow: darken(@toolbar_background, 14%);
+@toolbar_text: @color_b_text;
+@toolbar_noise: url('/images/global-noise.png') 50px 50px;
+
+
+
+/* TYPOGRAPHY */
+
+@font_size_small: 13px;
+@font_size_normal: 15px;
+@line_height_small: 16px;
+@line_height_normal: 21px;
+
+@textarea_font_size: @font_size_normal;
+@textarea_line_height: @line_height_normal;
+

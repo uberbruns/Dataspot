@@ -1,0 +1,38 @@
+<div class="panel" id="record">
+<div class="panelbar">Record</div>
+{{#view App.RecordView indexCardBinding="App.libraryController.selectedLibrary.indexController.selectedIndexCard"}}
+	<div class="scrollarea">
+		<div class="content">
+		{{#each view.sections}}
+		<div class="section">
+			{{#view App.SectionTitle sectionBinding="this"}}
+				<a href="#" {{action "edit" on="click"}}>{{this.name}}</a>
+			{{/view}}
+			{{#each this.fields}}
+				{{#view App.RecordField fieldBinding="this"}}
+					<div class="name">
+						<a href="#" {{action "edit" on="click"}}>
+							{{view.field.properties.displayName}}
+						</a>
+					</div>
+				{{view App.RecordFieldTextArea  class="value" valueBinding="view.field.value"}}{{/view}}
+			{{/each}}
+		</div>
+		{{/each}}
+		</div>
+	</div>
+	<div class="toolbar">
+		<ul>
+			<li><button class="add" type="button" {{action "addField" on="click"}}>Insert Field</button></li>
+			<li>
+				<button class="menu" type="button">List Menu</button>
+				<ul class="menu-content">								
+				<li><button type="button" {{action "addSection" on="click"}}>Add Section</button></li>
+				<li><button type="button" {{action "deleteSection" on="click"}}>Delete Section</button></li>
+				<li><button type="button" {{action "deleteField" on="click"}}>Delete Field</button></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+{{/view}}
+</div>

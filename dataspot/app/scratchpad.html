@@ -1,0 +1,75 @@
+<div class="tab-bar">
+
+	<div class="tabs">
+		{{#if view.library}}
+			<button type="button" class="library" {{action "switchTab" on="click"}}>Library</button>
+		{{/if}}
+		{{#if view.field}}
+		<button type="button" class="field" {{action "switchTab" on="click"}}>Field</button>
+		<button type="button" class="label" {{action "switchTab" on="click"}}>Label</button>
+		{{/if}}
+		{{#if view.library}}
+		<button type="button" class="api" {{action "switchTab" on="click"}}>API</button>
+		{{/if}}
+	</div>
+
+</div>
+
+
+.tab-bar {
+
+	background-color: #1b1b1b;
+	border-bottom: 1px solid #000;
+	border-top: 1px solid #333;
+	height: @toolbar_height;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+
+	.box-shadow(0 1px 0 #333);
+
+	.panel-control {
+		float: right;
+	}
+
+	button {
+		
+		background: 0;
+		border: 0;
+		color: #ddd;
+		float: left;
+		font-size: 0;
+		height: @toolbar_height - 2px;
+		margin: 0;
+		padding: 0;
+		width: @toolbar_height * 1;
+
+		&.close {
+			.background-icon(0);
+		}
+
+		&.library {
+			.background-icon(7);
+		}
+
+		&.section {
+			.background-icon(8);
+		}
+
+		&.field {
+			.background-icon(3);
+		}
+
+
+		&.label {
+			.background-icon(4);
+		}
+
+		&.api {
+			.background-icon(2);
+		}
+
+	}
+
+}

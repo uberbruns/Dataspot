@@ -1,0 +1,130 @@
+
+
+#index {
+
+	@item_text_margin:3px;
+	@color_back: @color_d_normal;
+	@color_selected_shadow: @color_e_dark;
+	@color_selected: @color_e_normal;
+	@color_selected_light: @color_e_light;
+	@color_selected_text: @color_e_text;
+
+
+	left: 161px;
+	width: 272px;
+	.background_gradient();
+
+
+	.panelbar {
+		padding-left: @x_spacing * 2;
+	}
+
+
+	.scrollarea {
+		border-left: 1px solid @color_back_light;
+		padding: @x_spacing * 2;
+		padding-right: @x_spacing;
+	}
+
+	.content {
+
+		border: 1px solid @color_front_shadow;
+		background-color: @color_front;
+		-webkit-background-clip: padding-box;
+		overflow: auto;
+		.rounded(4px);
+
+		div:last-of-type.indexCard {
+			border: 0;
+		}
+
+	}
+
+	.indexCard {
+
+		font-size: @font_size_normal;
+		padding: @x_spacing - @item_text_margin @x_spacing;
+		border-bottom: 1px solid @color_front_shadow;
+		cursor: pointer;
+		min-height: @x_spacing * 2 + @font_size_normal;
+		color: @color_front_text;
+		position: relative;
+
+		&.is-selected {
+
+			background-color: @color_selected;
+			color: @color_selected_text;
+			.negative-text();
+
+			.chevron {
+				display: none;
+				@chevron_size: 14px;
+				position: absolute;
+				height: @chevron_size;
+				width: @chevron_size;
+				background-color: @color_selected;
+				right: @chevron_size/-2;
+				top: 50%;
+				margin-top: @chevron_size/-2;
+				.rotation(45deg)
+			}		
+
+		}
+
+		div {
+
+			margin: @item_text_margin 0;
+			display: inline;
+			font-weight: normal;
+			line-height: @line_height_small;
+			font-size: @font_size_small;
+
+			&.title {
+				font-size: @font_size_normal;
+				font-weight: bold;
+			}
+
+			&.strong {
+				font-weight: bold;
+			}
+
+			&.minimal {
+				color: darken(@color_front_shadow, 20%);
+			}
+
+		}
+
+		& > hr:first-of-type {
+			display: none;
+		}
+
+		hr {
+
+			padding : 0;
+			margin: 0;
+			border: 0;
+			background: 0;
+			height: 0;
+
+			&.inline {
+				display: none;
+			}
+
+			&.newline {
+			}
+
+			&.spacing {
+				margin: 5px;
+			}
+
+			&.seperate {
+				border-bottom: 1px solid @color_front_shadow;
+				margin: 6px 0 5px 0;
+			}
+
+		}
+
+	}
+
+
+}

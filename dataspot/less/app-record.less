@@ -1,0 +1,133 @@
+
+#record {
+
+	@color_back: @color_d_normal;	
+
+	left: 433px;
+	right: 320px;
+	font-size: @font_size_normal;
+	.background_gradient();
+	
+	.scrollarea {
+		padding: @x_spacing * 2;
+		padding-left: @x_spacing;
+		border-right: 1px solid @color_front_light;
+	}
+
+
+	.toolbar {
+		right: 0px;
+	}
+
+
+	.content {
+		background: @color_front;
+		border: 1px solid @color_front_shadow;
+		padding: @x_spacing * 3;
+		padding-top: 0;
+		.rounded(4px);
+	}
+
+
+	.section {
+		padding-top: @textarea_line_height;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+
+	.section-title  {
+		border-bottom: 2px solid @color_front_text;
+		padding-bottom: 5px;
+
+		a, a:hover {
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+	}
+
+
+	.field {
+		display: block;
+		position: relative;
+		padding: 0;
+		margin: 0;
+		padding-left: 150px;
+		margin-bottom: -1px;
+		border-bottom: 1px solid @color_front_shadow;
+	}
+
+
+	.field .name, .field .value {
+		border: 0;
+		background: none;
+		font-size: @textarea_font_size;
+		height: @textarea_line_height * 2 + 2;
+		padding: 0;
+		margin: 0;
+		line-height: @textarea_line_height;
+	}
+
+
+	.field .name {
+		position: absolute;
+		display: block;
+		top: @textarea_line_height;
+		width: 130px;
+		left: 0px;
+		top: @x_spacing;
+		text-align: right;
+	}
+
+
+	.field .name a {
+		font-size: @font_size_normal;
+		font-weight: bold;
+		color: darken(@color_front_shadow, 25%);
+	}
+
+	.field .name a:hover, .field.is-inspected .name a {
+		color: @color_front_text;
+		cursor: pointer;
+		text-decoration: underline;
+	}
+
+
+	.field .value {
+		position: relative;
+		overflow: hidden;
+		resize: none;
+		width: 100%;
+		padding: @x_spacing @x_spacing 0 0;
+	}
+
+
+	.field *:focus {
+		z-index: 1000;
+		outline: 0;
+	}
+
+
+	.toolbar {
+
+		.edit {
+			width: 110px;
+		}
+
+	}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

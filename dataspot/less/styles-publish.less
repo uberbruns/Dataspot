@@ -1,0 +1,47 @@
+// Globals Definition
+@import "globals.less";
+@import "globals_mixins.less";
+
+
+// Ember.js Boilerplate
+@import "boilerplate-prepend.less";
+
+
+
+body {
+	padding: @x_spacing * 2;
+	font-size: @font_size_normal;
+	line-height: @line_height_normal;
+}
+
+ul li {
+
+	position: relative;
+	padding: @x_spacing/2 0 @x_spacing/2 100px;
+
+	span {
+
+		display: block;
+
+		&.state {
+			position: absolute;
+			top: @x_spacing/2;
+			height: @line_height_normal;
+			width: 90px;
+			left: 0;
+			text-align: right;
+			font-weight: bold;
+		}
+
+		&.filename {
+			font-style: itali
+		}
+
+	}
+
+}
+
+
+// Ember.js Boilerplate
+@import "boilerplate-append.less";
+

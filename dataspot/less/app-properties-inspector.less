@@ -1,0 +1,136 @@
+#properties-inspector {
+
+	@color_front_shadow: @color_c_dark;
+	@color_front: @color_c_normal;
+	@color_front_light: @color_c_light;
+	@color_front_text: @color_c_text;
+
+
+	background-color: @color_front;
+	position: absolute;
+	// right: -320px - 2px;
+	right: 0;
+	width: 320px;
+	z-index: 99999;
+
+	.transition(right 0.5s ease 0s);
+
+	
+
+	&.show-inspection-panel {
+		right: 0;
+	}
+
+	#inspector-view-wrapper {
+
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		border-left: 1px solid @color_front_shadow;
+		right: 0;
+		overflow: auto;
+
+		.inspector-view {
+
+			display: none;
+
+			.group {
+				padding: @x_spacing/2 @x_spacing 1.5*@x_spacing @x_spacing;
+				margin: 0;
+				border-bottom: 1px solid @color_front_shadow;
+				border-top: 1px solid @color_front_light;
+			}
+
+			> .group:first-of-type {
+				border-top: 0;
+			}
+
+
+			> .group:last-of-type {
+				border-bottom: 0;
+			}
+
+		}
+
+		&.library .inspector-view.library-view,
+		&.index .inspector-view.index-view,
+		&.section .inspector-view.section-view,
+		&.properties .inspector-view.properties-view,
+		&.label .inspector-view.label-view,
+		&.api .inspector-view.api-view {
+			display: block;
+		}
+
+		.title {
+			font-size: @font_size_normal;
+			padding-left: @x_spacing;
+			line-height: @x_spacing * 2;
+			font-size: @font_size_small;
+			font-weight: bold;
+			background-color: lighten(@color_front_shadow, 15%);
+			border-top: 1px solid lighten(@color_front_shadow, 20%);
+			border-bottom: 1px solid darken(@color_front_shadow, 1%);
+		}
+
+		.input {
+			margin-top: @x_spacing;
+			margin-bottom: 2px;
+			width: 100%;
+			position:relative;
+			padding: @x_spacing / 2 0;
+		}
+
+		.label {
+			display: inline-block;
+			width: 110px;
+			text-align: right;
+			color: @color_c_text;
+			font-size: @font_size_small;
+			font-weight: bold;
+		}
+
+		.input {
+
+			input, select, button {
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 120px;
+				height: 28px;
+				width: 169px;
+				font-size: @font_size_small;
+			}
+
+			input {
+
+				background-color: @color_front_light;
+				border: 1px solid @color_front_shadow;
+				color: @color_front_text;
+				font-weight: normal;
+				padding: 0 @x_spacing/2;
+				.rounded(4px);
+
+				&:focus {
+					border-color: @color_front_text;
+					outline: none;
+				}
+
+			}
+
+			select {
+				top: 50%;
+				margin-top: -11px;
+				height: 22px;
+			}
+
+			button {
+				left: @x_spacing * 2;
+				right: @x_spacing * 2;
+			}
+
+		}
+
+	}
+
+}

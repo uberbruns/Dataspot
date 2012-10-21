@@ -1,0 +1,29 @@
+{{#view App.LibraryListView}}
+	<div class="panel" id="libraries">
+		<div class="panelbar">Libraries</div>
+		<div class="scrollarea">	
+			<nav>
+				<ul>
+					{{#each view.libraries}}
+						<li>
+							{{#view App.LibraryListItemView libraryBinding="this"}}
+								{{view.title}}
+							{{/view}}
+						</li>
+					{{/each}}
+				</ul>
+			<nav>
+		</div>
+		<div class="toolbar">
+			<ul>
+				<li><button class="add" type="button" {{action "add" on="click"}}>Add Library</button></li>
+				<li>
+					<button class="menu" type="button">Library Menu</button>
+					<ul class="menu-content">
+						<li><button type="button" {{action "delete" on="click"}}>Delete Library</button></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+{{/view}}

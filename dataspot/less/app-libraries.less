@@ -1,0 +1,66 @@
+#libraries {
+
+	@color_front_shadow: @color_c_dark;
+	@color_front: @color_c_normal;
+	@color_front_light: @color_c_light;
+	@color_front_text: @color_c_text;
+
+	@color_selected_shadow: @color_e_dark;
+	@color_selected: @color_e_normal;
+	@color_selected_light: @color_e_light;
+	@color_selected_text: @color_e_text;
+
+
+	left: 0px;
+	width: 161px;
+	background-color: @color_front;
+	padding: 0;
+
+
+	.scrollarea {
+		border-right: 1px solid @color_front_shadow;
+		padding:0;
+	}
+
+
+	.toolbar {
+		left: -1px;
+	}
+	
+
+	nav {
+
+		padding:0;
+
+		li div {
+			cursor: pointer;
+			top:0;
+			right:0;
+			bottom: 0;
+			border: 1px solid transparent;
+			border-bottom-color: @color_front_shadow;
+			border-width: 1px 0;
+		}
+
+
+		.is-selected {
+			border-top-color: @color_selected_light;
+			border-bottom-color: @color_selected_shadow;
+			background-color: @color_selected;
+			color: @color_selected_text;
+			.negative-text();
+		}
+
+
+		ul li .item {
+			line-height: @x_height;
+			font-size: 14px;
+			font-weight: bold;
+			padding: 0 10px;
+		}
+
+
+	}
+
+
+}
