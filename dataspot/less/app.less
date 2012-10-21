@@ -46,15 +46,39 @@ header {
 	.gradient();
 
 	h1 {
-		display: none;
-		color: #fff;
-		font-size: 32px;
-		font-weight: normal;
-		left: 170px;
+		.negative-text();
+		color: @toolbar_text;
+		font-size: 26px;
+		font-weight: bold;
+		height: @header_height;
+		left: 180px;
+		line-height: @header_height;
 		position: absolute;
 		text-shadow: 0 -1px 0 #000;
-		top: 6px;
+		top: 0px;
+	}
+
+	a.button {
+
+		.gradient();
+		.inner-shadow(0px,0px,1px,1px,@toolbar_light);
 		.negative-text();
+		.rounded(6px);
+		border: 1px solid @toolbar_shadow;
+		color: @toolbar_text;
+		height: @header_height - @x_spacing * 2;
+		line-height: @header_height - @x_spacing * 2;
+		position: absolute;
+		right: @x_spacing * 2;
+		text-align: center;
+		text-shadow: 0 -1px 0 #000;
+		top: @x_spacing * 1;
+		width: 170px;
+
+		&:focus {
+			outline: 0;
+		}
+
 	}
 
 }

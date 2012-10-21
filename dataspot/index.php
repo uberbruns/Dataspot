@@ -1,4 +1,8 @@
-<!doctype html>
+<?php
+
+require_once 'config.php';
+
+?><!doctype html>
 <!--[if lt IE 7 ]> <html lang="en" class="ie6"> <![endif]--> <!--[if IE 7 ]>    <html lang="en" class="ie7"> <![endif]--> <!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]--> <!--[if IE 9 ]>    <html lang="en" class="ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
 <head>
@@ -26,12 +30,15 @@
 <body>
 
 	<div id="app">
+	<header>
+		<h1><?php print(DS_TITLE); ?></h1>
+		<a class="button publish" title="Publishing Log" href="publish.php">Publish All Data</a>
+	</header>
 	<script type="text/x-handlebars">
-		<header><h1>Dataspot</h1></header>
-		<?php include('app/app_library_template.html'); ?>
-		<?php include('app/app_index_template.html'); ?>
-		<?php include('app/app_record_template.html'); ?>
-		<?php include('app/app_inspector_template.html'); ?>
+		<?php include('app/app-library-template.html'); ?>
+		<?php include('app/app-index-template.html'); ?>
+		<?php include('app/app-record-template.html'); ?>
+		<?php include('app/app-inspector-template.html'); ?>
 	</script>
 	<div class="header-shadow"></div>
 	<div class="toolbar-shadow"></div>

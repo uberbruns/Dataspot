@@ -2,9 +2,9 @@
 
 class DB {
 
-	private static $datasource='mysql:host=localhost;dbname=dataspot;charset=utf8';
-	private static $username='root';
-	private static $password='root';
+	private static $datasource = DS_DB_DATASOURCE;
+	private static $username = DS_DB_USERNAME;
+	private static $password = DS_DB_PASSWORD;
 	private static $db;
 
 	private function __construct(){}

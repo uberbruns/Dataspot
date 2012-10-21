@@ -1,11 +1,11 @@
 /*
 
 Scripts included:
-1.
-2.
-3.
-4.
-5.
+1. Underscore / Undescore String
+2. jQuery + Plugins
+3. Handlebars
+4. Ember and Ember+Rest
+5. app.js + app_*.js
 
 */
 

@@ -9,6 +9,12 @@ var App = Ember.Application.create({
 		// Update View
 		App.adjustDocumentScrollingBehavior()
 		App.libraryController.update()
+
+		// Lightbox
+		$('.button.publish').colorbox({
+			iframe:true,
+			innerWidth:700,
+			innerHeight:400});
 		
 	},
 

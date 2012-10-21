@@ -2,13 +2,16 @@
 
 	function ds_join_path() {
 
+		$args = func_get_args();
+		$first_char = (substr($args[0], 0, 1) == "/") ? "/" : "";
+
 		$components = array_map(function($comp) {
 
 			return trim($comp,'/\\');
 
 		}, func_get_args());
 
-		return implode(DIRECTORY_SEPARATOR, $components);
+		return $first_char.implode(DIRECTORY_SEPARATOR, $components);
 
 	}
 
@@ -31,7 +34,7 @@
 		$string = preg_replace('/([^a-z0-9]+)/i', '-', $string);
 		$string = strtolower($string);
 		
-		if (empty($string)) return md5($input_stringx);
+		if (empty($string)) return md5($input_string);
 		
 		return utf8_encode($string);
 
