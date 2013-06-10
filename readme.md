@@ -5,7 +5,7 @@ Dataspot is currently in its prototype stage and tries to be a new and simpler w
 
 ![Screenshot](info/screenshot-inline.jpg?raw=true)
 
-[Read more words!](/uberbruns/Dataspot/info/)
+[Read more words!](/info/)
 
 
 
