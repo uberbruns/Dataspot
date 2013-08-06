@@ -6,12 +6,10 @@ Dataspot is currently in its prototype stage and tries to be a new and simpler w
 ![Screenshot](info/screenshot-inline.jpg?raw=true)
 
 
-
 Installation
 ------------
 - Create a new database and run the SQL queries from "info/scheme.sql"
 - Now change the config.php accordingly and add username and password.
-
 
 
 The MIT License
